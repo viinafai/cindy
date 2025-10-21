@@ -1,23 +1,39 @@
-const title = document.querySelector('.title')
-const text = `From Vina Faizatus Imuett`.split('')
+// ==== ANIMASI INTRO ====
+const intro = document.getElementById("intro");
+const introTitle = document.querySelector('.intro-title');
+const text = `From Vina Faizatus Imuett`.split('');
+
+// buat teks satu per satu
+text.forEach((char) => {
+  const span = document.createElement('span');
+  span.textContent = char === ' ' ? '\u00A0' : char;
+  const delay = Math.random() * 2;
+  span.style.animationDelay = `${delay}s`;
+  introTitle.appendChild(span);
+});
 
 
-// Create container for better responsive layout
-title.style.display = 'flex'
-title.style.flexWrap = 'wrap'
-title.style.justifyContent = 'center'
-title.style.gap = '0.5rem'
+// setelah 3.5 detik -> sembunyikan intro
+setTimeout(() => {
+  const intro = document.getElementById('intro');
+  intro.style.opacity = '0';
+  setTimeout(() => {
+    intro.style.display = 'none';
+  }, 1000);
+}, 3500);
 
-for (let index = 0; index < text.length; index++) {
-  if (text[index] !== ' ') {
-    title.innerHTML += `<span>${text[index]}</span>`
-  } else {
-    title.innerHTML += `<span style='width: 1rem'></span>`
-  }
-}
 
-const textElements = document.querySelectorAll('.title span');
-textElements.forEach((element) => {
-  const randomDelay = Math.random() * 3;
-  element.style.animationDelay = `${randomDelay}s`;
+
+
+// ==== ANIMASI BERGANTIAN UNTUK "FROM VINA FAIZATUS IMUETT" ====
+const fromText = document.querySelector('.from-text');
+const message = 'From Vina Faizatus Imuett'.split('');
+
+fromText.innerHTML = ''; // kosongkan dulu
+message.forEach((char, i) => {
+  const span = document.createElement('span');
+  span.textContent = char;
+  if (char === ' ') span.style.width = '1rem'; // jarak antar kata
+  span.style.animationDelay = `${i * 0.15}s`; // delay antar huruf
+  fromText.appendChild(span);
 });
