@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="shortcut icon" href="images/gift.png" type="image/x-icon">
+  <link rel="stylesheet" href="css/index.css">
+  <title>FLOWERS FOR SOMEONE</title>
+</head>
+
+<body>
+  <!-- Background -->
+  <div class="night"></div>
+
+  <!-- Title -->
+  <h1 class="title"></h1>
+
+  <!-- Buttons -->
+  <div style="position: absolute; top: 60vh; width: 100%; display: flex; justify-content: center; gap: 20px;">
+    <!-- Tombol Open -->
+    <a href="flower.html" class="btn">
+      <svg height="24" width="24" fill="#FFFFFF" viewBox="0 0 24 24" data-name="Layer 1" id="Layer_1" class="sparkle">
+        <path
+          d="M10,21.236,6.755,14.745.264,11.5,6.755,8.255,10,1.764l3.245,6.491L19.736,11.5l-6.491,3.245ZM18,21l1.5,3L21,21l3-1.5L21,18l-1.5-3L18,18l-3,1.5ZM19.333,4.667,20.5,7l1.167-2.333L24,3.5,21.667,2.333,20.5,0,19.333,2.333,17,3.5Z">
+        </path>
+      </svg>
+      <span class="text">Open</span>
+    </a>
+
+    <!-- Tombol Page -->
+    <a id="pageBtn" class="btn">
+      <svg height="24" width="24" fill="#FFFFFF" viewBox="0 0 24 24" data-name="Layer 1" id="Layer_2" class="sparkle">
+        <path
+          d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 
+          10-4.48 10-10S17.52 2 12 2zm0 3a2 2 0 110 4 
+          2 2 0 010-4zm1 14h-2v-6h2v6z" />
+      </svg>
+      <span class="text">Page</span>
+    </a>
+  </div>
+
+  <!-- Halaman Gambar -->
+  <div id="picturePage"
+    style="display:none; position:fixed; inset:0; background:rgba(0,0,0,0.95); z-index:999; 
+           display:flex; flex-direction:column; align-items:center; justify-content:center;">
+
+    <!-- Container untuk semua gambar -->
+    <div style="display:flex; flex-wrap:wrap; justify-content:center; gap:20px; margin-bottom:20px;">
+      <img src="images/vina.jpeg" alt="My Picture" style="width:13%; max-width:400px; border-radius:20px; box-shadow:0 0 20px white;">
+      <img src="images/vina2.jpeg" alt="My Picture" style="width:13%; max-width:400px; border-radius:20px; box-shadow:0 0 20px white;">
+      <img src="images/vina3.jpeg" alt="My Picture" style="width:13%; max-width:400px; border-radius:20px; box-shadow:0 0 20px white;">
+      <img src="images/vina4.jpeg" alt="My Picture" style="width:13%; max-width:400px; border-radius:20px; box-shadow:0 0 20px white;">
+      <img src="images/vina5.jpeg" alt="My Picture" style="width:13%; max-width:400px; border-radius:20px; box-shadow:0 0 20px white;">
+    </div>
+
+    <!-- Tombol kembali -->
+    <button id="closeBtn"
+      style="background:#222; color:white; border:none; padding:10px 25px; border-radius:10px; cursor:pointer;">
+      Back
+    </button>
+  </div>
+
+  <script src="js/index.js"></script>
+
+  <script>
+    const page = document.getElementById("picturePage");
+    const pageBtn = document.getElementById("pageBtn");
+    const closeBtn = document.getElementById("closeBtn");
+
+    pageBtn.addEventListener("click", () => {
+      page.style.display = "flex";
+    });
+
+    closeBtn.addEventListener("click", () => {
+      page.style.display = "none";
+    });
+  </script>
+</body>
+
+</html>
